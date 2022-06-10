@@ -46,7 +46,7 @@ function getBingImages(imgUrls) {
 }
 
 
-function loadVideoBackgroud() {
+function loadVideoBackground() {
   var bv = new Bideo();
   bv.init({
     // Video element
@@ -69,21 +69,24 @@ function loadVideoBackgroud() {
     // of different video formats to add
     src: [
       {
-        src: './assets/video/background.mp4',
+        src: backgroundVideoUrl,
         type: 'video/mp4'
       }
     ],
 
     // What to do once video loads (initial frame)
     onLoad: function () {
-		$('#panel').css("background", "center center no-repeat #666")
+		$('#background_video_cover').css('display', 'none')
 	}
   });
 }
 
-if( backgroundType === 'video' ){
-	$('#panel').css("background", "url('./assets/video/background_cover.jpg') center center no-repeat #000000")
-	$('#panel-main').append('<video id="background_video" style="width:100%" loop muted></video>')
+if( backgroundType === 'video_wallpaper' ){
+	$('#panel').css("background", "center center no-repeat #000000")
+	$('#panel-main').append('<video id="background_video" loop muted></video>')
+	$('#panel-main').append('<div id="background_video_cover" class="video-cover"></div>')
+	$('#background_video_cover').css('background', 'url('+backgroundVideoCoverUrl+') no-repeat')
+
 	$('#background_video').css({
 		"position": "absolute",
 		"top": "50%",
@@ -93,7 +96,7 @@ if( backgroundType === 'video' ){
 		"height": "100%",
 		"width": "100%",
 	})
-	loadVideoBackgroud()
+	loadVideoBackground()
 } else {
 	const script = document.createElement("script");
 	script.type="text/javascript";
