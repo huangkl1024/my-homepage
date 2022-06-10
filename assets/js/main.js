@@ -83,7 +83,16 @@ function loadVideoBackgroud() {
 
 if( backgroundType === 'video' ){
 	$('#panel').css("background", "center center no-repeat #000000")
-	$('#panel-cover-overlay').append('<video id="background_video" style="width:100%" loop muted></video>')
+	$('#panel-main').append('<video id="background_video" style="width:100%" loop muted></video>')
+	$('#background_video').css({
+		"position": "absolute",
+		"top": "50%",
+		"left": "50%",
+		"transform": "translate(-50%, -50%)",
+		"object-fit": "cover",
+		"height": "100%",
+		"width": "100%",
+	})
 	loadVideoBackgroud()
 } else {
 	const script = document.createElement("script");
