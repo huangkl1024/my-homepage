@@ -75,14 +75,14 @@ function loadVideoBackgroud() {
     ],
 
     // What to do once video loads (initial frame)
-    // onLoad: function () {
-    //   document.querySelector('#video_cover').style.display = 'none';
-    // }
+    onLoad: function () {
+		$('#panel').css("background", "center center no-repeat #666")
+	}
   });
 }
 
 if( backgroundType === 'video' ){
-	$('#panel').css("background", "center center no-repeat #000000")
+	$('#panel').css("background", "url('./assets/video/background_cover.jpg') center center no-repeat #000000")
 	$('#panel-main').append('<video id="background_video" style="width:100%" loop muted></video>')
 	$('#background_video').css({
 		"position": "absolute",
