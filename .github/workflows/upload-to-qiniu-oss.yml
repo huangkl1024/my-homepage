@@ -11,7 +11,7 @@ jobs:
 
     - name: 执行上传
       run: |
-        wget https://devtools.qiniu.com/qshell-v2.9.0-linux-amd64.tar.gz?ref=developer.qiniu.com
+        wget https://devtools.qiniu.com/qshell-v2.9.0-linux-amd64.tar.gz
         tar -xzvf qshell-v2.9.0-linux-amd64.tar.gz
         cd qshell-v2.9.0-linux-amd64
         chmod +x qshell
