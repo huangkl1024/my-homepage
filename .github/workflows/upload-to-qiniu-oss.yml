@@ -14,10 +14,15 @@ jobs:
         wget https://devtools.qiniu.com/qshell-v2.9.0-linux-amd64.tar.gz
         pwd
         ls
+        echo "tar qshell tar gz file"
         tar -xzvf qshell-v2.9.0-linux-amd64.tar.gz
         ls
+        echo "add execute permission to qshell"
         chmod +x ./qshell
+        echo "add qiniu account"
         ./qshell account  ${{ secrets.AK }} ${{ secrets.SK }}
+        echod "generate upload config"
         echo "{\"src_dir\": \"./\", 	\"ignore_dir\": true, 	\"bucket\": \"/\", 	\"skip_file_prefixes\": \"qshell\" }" > upload.conf
+        echo "upload repos"
         qshell qupload upload.conf
 
