@@ -16,9 +16,8 @@ jobs:
         ls
         tar -xzvf qshell-v2.9.0-linux-amd64.tar.gz
         ls
-        cd qshell-v2.9.0-linux-amd64
-        chmod +x qshell
+        chmod +x ./qshell
         ./qshell account  ${{ secrets.AK }} ${{ secrets.SK }}
-        echo "{\"src_dir\":\"./\",\"ignore_dir\":true,\"bucket\":\"/\"}" > upload.conf
+        echo "{\"src_dir\": \"./\", 	\"ignore_dir\": true, 	\"bucket\": \"/\", 	\"skip_file_prefixes\": \"qshell\" }" > upload.conf
         qshell qupload upload.conf
 
