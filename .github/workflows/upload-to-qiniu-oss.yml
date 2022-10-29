@@ -22,7 +22,7 @@ jobs:
         echo "add qiniu account"
         ./qshell account  ${{ secrets.AK }} ${{ secrets.SK }} ${{ secrets.ACCOUNT }}
         echo "generate upload config"
-        echo "{\"src_dir\":\"./\",\"ignore_dir\":true,\"bucket\":\"huangkl1024-homepage\",\"skip_file_prefixes\":\".git;qshell;.github\",\"overwrite\":true}" > upload.conf
+        echo "{\"src_dir\": \"./\", 	\"ignore_dir\": false, 	\"bucket\": \"huangkl1024-homepage\", 	\"skip_file_prefixes\": \"qshell,upload.conf\", 	\"skip_path_prefixes\": \".git,.github\", 	\"overwrite\": true }" > upload.conf
         echo "upload config is"
         cat upload.conf
         echo "upload repos"
