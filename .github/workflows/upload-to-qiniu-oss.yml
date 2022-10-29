@@ -20,7 +20,7 @@ jobs:
         echo "add execute permission to qshell"
         chmod +x ./qshell
         echo "add qiniu account"
-        ./qshell account  ${{ secrets.AK }} ${{ secrets.SK }}
+        ./qshell account  ${{ secrets.AK }} ${{ secrets.SK }} ${{secrets.ACCOUNT}}
         echod "generate upload config"
         echo "{\"src_dir\": \"./\", 	\"ignore_dir\": true, 	\"bucket\": \"/\", 	\"skip_file_prefixes\": \"qshell\" }" > upload.conf
         echo "upload repos"
