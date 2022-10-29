@@ -26,5 +26,5 @@ jobs:
         echo "upload config is"
         cat upload.conf
         echo "upload repos"
-        ./qshell qupload 10 upload.conf
+        ./qshell qupload upload.conf
 
